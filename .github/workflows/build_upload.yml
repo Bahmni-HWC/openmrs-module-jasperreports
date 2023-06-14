@@ -34,7 +34,7 @@ jobs:
           name: omod-artifacts
           path: output
       - name: Build and deploy with Maven
-        run: mvnw --no-transfer-progress clean -U deploy -Dmaven.test.skip=true
+        run: ./mvnw --no-transfer-progress clean -U deploy -Dmaven.test.skip=true
 
   trigger-dependent-repos:
     name: Trigger Workflows
