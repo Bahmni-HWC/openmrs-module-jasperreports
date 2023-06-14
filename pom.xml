@@ -17,9 +17,9 @@
 			<!-- <url>https://openmrs.jfrog.io/openmrs/modules/</url> -->
 		</repository>
 		<snapshotRepository>
-    		<id>openhmis-repo</id>
-			<name>Snapshots</name>
-    		<url>https://mavenrepo.openhmisafrica.org/content/repositories/snapshots</url>
+    		<id>repo.mybahmni.org</id>
+			<name>bahmni-artifactory-snapshots</name>
+    		<url>http://repo.mybahmni.org/artifactory/snapshot</url>
   		</snapshotRepository>
 	</distributionManagement>
 
