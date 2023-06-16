@@ -11,7 +11,7 @@ env:
   EVENT_TYPE: openmrs-module-jasperreports
 
 jobs:
-  build-commons:
+  build:
     name: Build and upload openmrs-module-openhmis.commons omod
     runs-on: ubuntu-latest
 
@@ -40,18 +40,8 @@ jobs:
       - name: Copy omod artifacts to output directory
         run: mkdir output && cp openmrs-module-openhmis.commons/omod/target/*.omod output
 
-  build-jasperreports:
-    name: Build and upload jasperreports omod
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
 
       - name: Cache Maven packages
         uses: actions/cache@v2
@@ -64,7 +54,7 @@ jobs:
         run: mvn clean install -DskipTests=true
 
       - name: Copy omod artifacts to output directory
-        run: mkdir output && cp jasperreports/omod/target/*.omod output
+        run: mkdir output && cp omod/target/*.omod output
 
       # - uses: actions/upload-artifact@v2
       #   with:
